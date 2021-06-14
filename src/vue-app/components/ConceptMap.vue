@@ -78,11 +78,6 @@ import vis from "vis-network";
 */
 </script>
 <style scoped>
-#dddnetwork {
-	width: 600px;
-	height: 400px;
-	border: 1px solid blueviolet;
-}
 #network {
 	position:absolute;
 	left:0;
@@ -93,7 +88,5 @@ import vis from "vis-network";
 	width: 100vw;
 	height: 100vh;
 	padding: 0;
-
-	background-color: #ffff00;
 }
 </style>

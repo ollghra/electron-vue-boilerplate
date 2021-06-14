@@ -2,6 +2,7 @@
 	<!--<h1>Hi {{username}}</h1>-->
 	<div id="container">
 		<ConceptMap/>
+		<Search id="search" class="overlay"/>
 		<div class="overlay" id="menu">
 			<figure class="image is-48x48">
 				<img src="@/assets/logo.svg" alt="EOFIS logo"/>
@@ -15,12 +16,14 @@
 </template>
 <script>
 import ConceptMap from "@/components/ConceptMap";
+import Search from "@/components/Search";
 export default {
 	props: {
 		username: String
 	},
 	components: {
-		ConceptMap
+		ConceptMap,
+		Search
 	}
 };
 
@@ -29,11 +32,17 @@ export default {
 <style scoped>
 #container div, .overlay {
 	position: absolute;
-	top: 36px;
-	left: 0px;
 	border: 1px solid blueviolet;
 }
 #menu {
+	top: 36px;
+	left: 0px;
+	width: 200px;
+	z-index: 1;
+}
+#search {
+	top: 36px;
+	right: 0px;
 	width: 200px;
 	z-index: 1;
 }
