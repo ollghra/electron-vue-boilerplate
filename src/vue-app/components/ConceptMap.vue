@@ -9,33 +9,6 @@ import { DataSet, Network } from "vis-network/standalone";
 var network = null;
 export default {
 	name : "ConceptMap",
-	beforeCreate() {
-		console.log("BFCREATE");
-	},
-	created() {
-		console.log("CREATED");
-	},
-	beforeMount() {
-		console.log("BFMOUNT");
-	},
-	beforeUpdate() {
-		console.log("BFUPDATE");
-	},
-	updated() {
-		console.log("UPDATE");
-	},
-	activated() {
-		console.log("ACTIVATED");
-	},
-	deactivated() {
-		console.log("DEACTIVATED");
-	},
-	beforeUnmount() {
-		console.log("BFUNMOUNT");
-	},
-	unmounted() {
-		console.log("UNMOUNTED");
-	},
 	data() {
 		return {
 			nodes : new DataSet([
@@ -75,13 +48,6 @@ export default {
 			};
 		}
 	},
-	//	setup(props) {
-	//		onMounted( () => {
-	//			console.log(`CM MOUNTED ${props}`);
-	//			var container = document.getElementById("network");
-	//			network = new Network(container, this.graph_data, this.options);
-	//		});
-	//	},
 	mounted() {
 		//console.log(`Node DataSet ${nodes}`);
 		//console.log(`Edges DataSet ${edges}`);
@@ -112,12 +78,12 @@ import vis from "vis-network";
 */
 </script>
 <style scoped>
-#network {
+#dddnetwork {
 	width: 600px;
 	height: 400px;
 	border: 1px solid blueviolet;
 }
-#dddnetwork {
+#network {
 	position:absolute;
 	left:0;
 	right:0;
