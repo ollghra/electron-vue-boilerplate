@@ -1,14 +1,41 @@
 <template>
-	<div id="network"></div>
+	<div id="network">Sorry, but the concept map view appears to not be working</div>
 	<h2 id="eventSpanHeading"></h2>
 	<pre id="eventSpanContent"></pre>
 </template>
 <script >
 import { DataSet, Network } from "vis-network/standalone";
-//import { vis } from "vis-network";
+//import { onMounted } from "vue";
 var network = null;
 export default {
 	name : "ConceptMap",
+	beforeCreate() {
+		console.log("BFCREATE");
+	},
+	created() {
+		console.log("CREATED");
+	},
+	beforeMount() {
+		console.log("BFMOUNT");
+	},
+	beforeUpdate() {
+		console.log("BFUPDATE");
+	},
+	updated() {
+		console.log("UPDATE");
+	},
+	activated() {
+		console.log("ACTIVATED");
+	},
+	deactivated() {
+		console.log("DEACTIVATED");
+	},
+	beforeUnmount() {
+		console.log("BFUNMOUNT");
+	},
+	unmounted() {
+		console.log("UNMOUNTED");
+	},
 	data() {
 		return {
 			nodes : new DataSet([
@@ -48,12 +75,19 @@ export default {
 			};
 		}
 	},
+	//	setup(props) {
+	//		onMounted( () => {
+	//			console.log(`CM MOUNTED ${props}`);
+	//			var container = document.getElementById("network");
+	//			network = new Network(container, this.graph_data, this.options);
+	//		});
+	//	},
 	mounted() {
 		//console.log(`Node DataSet ${nodes}`);
 		//console.log(`Edges DataSet ${edges}`);
 		//console.log(`Data ${data}`);
 		//console.log(`Options ${options}`);
-		//console.log("MOUNTED");
+		console.log("MOUNTED");
 		this.container = document.getElementById("network");
 		network = new Network(this.container, this.graph_data, this.options);
 		
@@ -83,16 +117,17 @@ import vis from "vis-network";
 	height: 400px;
 	border: 1px solid blueviolet;
 }
-#dddddnetwork {
+#dddnetwork {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
 	width: 100vw;
 	height: 100vh;
 	padding: 0;
-	margin: 0;
-	position:absolute;
-	left: 0px;
-	top: 0px;
-	z-index: -1;
 
-	background: #fff000;
+	background-color: #ffff00;
 }
 </style>
