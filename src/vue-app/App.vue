@@ -1,26 +1,33 @@
 <template>
 	<img class="vue-logo" src="@/assets/logo.svg" alt="Vue logo" />
-	<HelloWorld message="Hello Vue 3.0 + Webpack" />
+	<Home username="Tiaɼnaċ"/>
 </template>
 
 <script>
+console.log("APP RAN");
 /* eslint-disable indent */
-
 	"use strict";
-
-	import HelloWorld from "@/components/HelloWorld";
+	import Home from "@/components/Home";
 
 	export default {
-		components: { HelloWorld }
-	};
+			components: { 
+					Home
+				},
+			setup() {
+					console.log("APP SETUP");
+				},
+			mounted() {
+					console.log("APP MOUNTED");
+				}
+		};
 </script>
 
-<style lang="scss">
-	@charset "utf-8";
+<style lang="scss" scoped>
+@charset "utf-8";
 
-	@import "@/styles/variables";
+@import "@/styles/variables";
 
-	.vue-logo {
-		max-width: 10rem;
-	}
+img {
+	max-width: 10rem;
+}
 </style>

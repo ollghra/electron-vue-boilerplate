@@ -17,6 +17,7 @@
 		},
 		setup() {
 			const count = ref(0);
+			console.log("EEEE");
 			return { count };
 		}
 	};
