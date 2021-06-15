@@ -63,6 +63,7 @@
 	},
 	"homepage": "https://github.com/oliverfindl/electron-vue-boilerplate#readme",
 	"dependencies": {
+		"nedb": "^1.8.0",
 		"vue": "^3.0.11"
 	},
 	"devDependencies": {
