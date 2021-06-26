@@ -3,5 +3,9 @@
 import { createApp } from "vue";
 import App from "@/App.vue";
 import "@/index.scss";
+import db from "./datastore";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+app.config.globalProperties.$db = db;
+app.mount("#app");
+

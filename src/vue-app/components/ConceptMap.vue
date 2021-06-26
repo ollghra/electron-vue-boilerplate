@@ -4,6 +4,7 @@
 	<pre id="eventSpanContent"></pre>
 </template>
 <script >
+console.log(`WINDOW: ${window}`);
 import { DataSet, Network } from "vis-network/standalone";
 //import { onMounted } from "vue";
 var network = null;
@@ -53,13 +54,13 @@ export default {
 		//console.log(`Edges DataSet ${edges}`);
 		//console.log(`Data ${data}`);
 		//console.log(`Options ${options}`);
-		console.log("MOUNTED");
+		console.log("ConceptMap MOUNTED");
 		this.container = document.getElementById("network");
 		network = new Network(this.container, this.graph_data, this.options);
 		
-		console.log(`Container ${this.container}`);
+		//console.log(`Container ${this.container}`);
 		console.log(`Network ${network}`);
-		console.log(Network);
+		//console.log(Network);
 		//network.on("click", function (params) {
 		//	params.event = "[original event]";
 		//	document.getElementById("eventSpanHeading").innerText = "Click event:";

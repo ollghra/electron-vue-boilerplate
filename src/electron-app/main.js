@@ -2,7 +2,11 @@
 
 // Modules to control application life and create native browser window.
 const { app, BrowserWindow } = require("electron");
-const { resolve } = require("path");
+const { resolve, join } = require("path");
+
+// Replacement for electron remote module which is deprecated.
+// Used in ../vue-app/datastore.js to get userData dir
+require("@electron/remote/main").initialize();
 
 const createWindow = () => {
 	// Create the browser window.
@@ -10,9 +14,11 @@ const createWindow = () => {
 		width: 720,
 		height: 540,
 		icon: resolve(__dirname, "./assets/icon.png"),
+		preload: join(__dirname, "preload.js"),
 		webPreferences: {
 			contextIsolation: false,
-			nodeIntegration: true
+			nodeIntegration: true,
+			enableRemoteModule: true
 		}
 	});
 
@@ -47,8 +53,3 @@ app.on("window-all-closed", () => process.platform !== "darwin" && app.quit());
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-// DB
-import db from "./database";
-db.loadDatabase(function(err) {
-	console.log(`Loaded app db with (poss. none) errors: ${err}`);
-});

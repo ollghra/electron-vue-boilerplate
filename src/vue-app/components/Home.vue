@@ -3,6 +3,7 @@
 	<div id="container">
 		<ConceptMap/>
 		<Search id="search" class="overlay"/>
+		<NoteList/>
 		<div class="overlay" id="menu">
 			<figure class="image is-48x48">
 				<img src="@/assets/logo.svg" alt="EOFIS logo"/>
@@ -17,13 +18,18 @@
 <script>
 import ConceptMap from "@/components/ConceptMap";
 import Search from "@/components/Search";
+import NoteList from "@/components/NoteList";
 export default {
 	props: {
 		username: String
 	},
 	components: {
 		ConceptMap,
-		Search
+		Search,
+		NoteList
+	},
+	mounted() {
+		console.log(this.$db);
 	}
 };
 
